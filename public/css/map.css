@@ -1,0 +1,670 @@
+/*
+Theme Name: Atlas
+Theme URI: to do
+Author: the Mayall team
+Author URI: to do
+Description: The 2014 theme for Atlas takes us back to the web app, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 
+
+This theme, like Mayall, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Repeatable Patterns
+ * 2.0 - Basic Structure
+ * 3.0 - Header
+ *   3.1 - Mayall Navigation
+ *   3.2 - Atlas Navigation
+ *	 3.3 - Triangle bottom navbar
+ * 4.0 - Content
+ *   4.1 - Home Map
+ *   4.2 - Entry Meta
+ *   4.3 - Entry Content
+ *   4.4 - Galleries
+ *   4.5 - Post Formats
+ *   4.6 - Attachments
+ *   4.7 - Post/Paging Navigation
+ *   4.8 - Author Bio
+ *   4.9 - Archives
+ *   4.10 - Search Results/No posts
+ *   4.11 - 404
+ *   4.12 - Comments
+ *   4.13 - Multisite
+ *   4.14 - Portfolio
+ *   4.15 - Home page
+ *   4.16 - Content page
+ * 5.0 - Sidebar
+ *   5.1 - Widgets
+ * 6.0 - Footer
+ *   6.1 - Newsletter form
+ * 7.0 - Media Queries
+ * 8.0 - Print
+ * ----------------------------------------------------------------------------
+ */
+
+/** 
+ * 1.0 - Repeatable Patterns
+ */
+ body { margin:0; padding:0; }
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
+.nopadding{
+	padding: 0px;
+}
+
+.right{
+	float: right;
+}
+
+.glyphicon-bell{
+
+	padding-top: 2px;
+
+}
+
+.tooltip.bottom{
+	z-index: 1030;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: white;
+  border-width: 0 5px 5px;
+}
+
+.tooltip-inner {
+  color: #7E7E7E;
+  background: white;
+  border-radius: 2px;
+}
+
+.modal-dialog {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+.modal-footer {
+    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .modal-dialog {
+    width: 100%;
+  }
+}
+
+/* 
+ * 2.0 - Basic Structure 
+ */
+body{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #7E7E7E;
+	font-family: 'Century Gothic','Droid Sans', sans-serif;
+}
+
+.row{margin:0px;}
+
+.form-control{
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: none;
+	width: 290px;
+	height: 32px;
+}
+
+.input-group{
+	width: 100%;
+}
+
+.btn-group{
+	width: 100%;
+	margin-top: 0px;
+}
+
+.btn-group .btn-default{
+	border-radius: 0px;
+}
+
+
+/* Flags */
+.flag{
+	width: 18px;
+	height: 12px;
+	display: inline-block;
+}
+
+.flag-france{
+	background-image: url(../images/flags/france.png);
+	background-repeat: no-repeat;
+}
+
+/**
+ * 3.0 - Header
+ */
+.navbar{margin-bottom: 0px}
+.container-fluid>.navbar-header{
+	
+	
+}
+
+#site-search-input{
+	background-color: transparent;
+	color: #F2CFCF;
+}
+
+#site-search-input.form-control::-webkit-input-placeholder { 
+	color: #F2CFCF;
+	font-size: 16px;
+	font-family: Gotham htf;
+}
+
+#site-search-input .form-control{
+	font-size: 16px;
+    font-family: Gotham htf; 
+    color: #F2CFCF;
+    width: 495px !important;
+}
+
+#site-search-input.form-control:focus{
+	border-color: transparent;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: white;
+}
+
+#site-search .glyphicon-search{
+	top:4px;
+}
+
+#site-search{
+	margin: 0px;
+}
+
+#site-search span{
+	color: #F2CFCF;
+}
+
+#site-search:hover span{
+	color: white;
+}
+
+/* 3.2 - Campaign Manager Navigation */
+
+
+.nav > li > a{
+	padding: 7px 10px;
+}
+
+
+/** 
+
+ * 4.0 - Content
+ */
+#map-content,#map-content > div, #map-content > div > .row{
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+#map-content{
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	padding-top: 85px;
+}
+/* 4.1 - Home Map */
+.row#map-container{
+	top: 0px;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+
+	transition: opacity 0.3s ease;
+}
+#map { 
+	position: absolute;
+	height: 100%;
+	display: block;
+}
+
+#map-left-panel{
+	width: 320px;
+	position: relative;
+	float: left;
+	z-index: 1;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.leaflet-top {
+	top: 110px !important;
+}
+
+.panel-primary{
+	height: 800px;
+	border: none;
+	box-shadow: 0px 0px 11px #AAA !important;
+}
+
+.list-group{
+	position: relative;
+	margin-top: 15px;
+}
+.filtres{
+	position: relative;
+}
+
+.filtres ul li{
+	float: left;
+	list-style: none;
+}
+
+.btn-group{
+	margin-top: 15px;
+}
+
+#type-icons{
+	margin-top:15px;
+	padding: 0;
+}
+
+#type-icons li{
+
+}
+
+#type-icons a{
+	color: #7E7E7E;
+	margin: auto;
+}
+
+#type-icons #btn-all{
+	margin-top: -2px;
+	padding-left: 10px;
+	padding-right:6px;
+	border-bottom: 2px solid #7E7E7E !important;
+	overflow: hidden;
+}
+
+#type-icons #btn-places{
+	margin-top: -2px;
+	padding-left: 11px;
+	padding-right: 11px;
+	border-bottom: 2px solid #dd5f5f !important;
+	overflow: hidden;
+}
+
+#type-icons #btn-materials{
+	margin-top: -2px;	
+	padding-left: 7px;
+	padding-right: 7px;
+	border-bottom: 2px solid #986EF4 !important;
+	overflow: hidden;
+}
+
+#type-icons #btn-skills{
+	margin-top: -2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-bottom: 2px solid #F4F069 !important;
+	overflow: hidden;
+}
+
+#type-icons #btn-projetcs{
+	margin-top: -2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 2px solid #4FEDD9 !important;
+	overflow: hidden;
+}
+
+#advanced-research{
+	position: relative;
+	top: 5px;
+}
+
+.logo-communaute{
+	margin-right: 15px;
+ 	height: 40px;
+	width: 40px;
+	background-color: #CCCCCC;
+	float: left;
+	border-radius: 30px;
+}
+
+.leaflet-tile-container, .leaflet-marker-icon{
+	transition: filter 0.3s ease;
+	-moz-transition: -moz-filter 0.3s ease;
+	-webkit-transition: -webkit-filter 0.3s ease;
+	-o-transition: -o-filter 0.3s ease;
+	-ms-transition: -ms-filter 0.3s ease;
+}
+
+/* Map Search Container */
+#blur-search{
+	position: relative;
+	height: 102%;
+	display: block;
+	z-index: 10;
+	overflow: hidden;
+	width: 493px;
+
+	background-color: rgba(51, 55, 70, 0.1);
+
+	transition: opacity 0.3s ease;
+}
+
+#blur-search #inner-blur-search{
+	position: relative;
+	height: 100%;
+	display: block;
+	width: 495px;
+	overflow-x: scroll;
+}
+
+.blur{
+	filter: blur(5px);
+	-moz-filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+}
+
+
+.map-search-container, #input-search{
+	padding-top: 15px;
+}
+
+#map-search-container{
+	overflow: hidden;
+}
+
+#map-search-container #search-results{
+	padding: 0px;
+}
+
+#map-search-container #search-results .list-group-item{
+	background-color: rgba(255, 255, 255, 1);
+	border: none;
+	border-radius: 0px;
+	margin-bottom: 5px;
+	height: 130px;
+}
+
+#map-search-container #search-results .list-group-item:hover{
+	background-color: #E4E4E4;
+}
+
+.cs-menu{
+	background-color: white;
+	width: 100%;
+	padding-left: 6%;
+	height: 40px;
+	margin-top: 15px;
+}
+
+.cs-menu li>a {
+	padding: 10px 10px 10px 10px;
+}
+
+.half-right-border{
+	width: 1px !important;
+	top:5px;
+	border-right: 1px solid #333;
+	height: 30px;
+}
+
+#search-results .list-group-item{
+	display: none;
+}
+
+#search-results .Lieux{
+	padding: 0px;
+	border-bottom: 4px solid #dd5f5f !important;
+	overflow: hidden;
+}
+
+#search-results .Projet{
+	padding: 0px;
+	border-bottom: 4px solid #4FEDD9 !important;
+	overflow: hidden;
+}
+
+#search-results .Groupe{
+	padding: 0px;
+	border-bottom: 4px solid #986EF4 !important;
+	overflow: hidden;
+}
+
+#search-results .Competence{
+	padding: 0px;
+	border-bottom: 4px solid #F4F069 !important;
+	overflow: hidden;
+}
+
+#search-results .active{
+	display: block;
+}
+
+#map-search-container .search-result-thumbmail{
+	background-color: grey;
+	height: 126px;
+	width: 126px;
+	float: left;
+	box-shadow: 3px 0px 16px #DDDDDD;
+}
+
+#search-results .infos{
+	padding-top: 20px;
+	padding-left: 146px;
+	padding-right: 20px;
+}
+
+#search-results .infos h4{
+	border-bottom: 1px solid;
+	text-transform: uppercase;
+}
+
+#search-results .infos .localisation{
+	float: right;
+}
+
+#search-results .infos .key-numbers{
+	margin-top: 15px;
+	padding: 0px;
+}
+
+#search-results .infos .key-numbers li{
+	float: left;
+	list-style: none;
+	margin-right: 15px;
+}
+
+#search-results .infos .map-marker{
+	color: #000000;
+	font-size: 19px;
+}
+/* 4.3 - Entry content */
+
+	/* 4.2.1 Top information */
+
+.profile-page{
+	margin: 0px;
+	padding: 0px;
+	z-index: 0;
+	margin-top: -50px;
+	background-color: #D1D1D1;
+}
+
+.row#profile-container{
+	display: block;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+	background-color: #D1D1D1;
+}
+
+#top-info{
+	height: 360px;
+	display: block;
+	background-color: grey;
+	box-shadow: inset 0px -10px 40px #252525;
+}
+
+.profile-picture{
+	z-index: 2;
+	margin-top: 78px;
+	border-radius: 125px;
+	background-color: white;
+}
+
+.profile-quick-bio{
+	font-size: 14px;
+	text-align: right;
+	vertical-align: bottom;
+	margin-top: 300px;
+	color: white;
+}
+
+#tab-header{
+	height: 93px;
+}
+
+.tab-header-title{
+	font-size: 26px;
+	font-family: Gotham htf;
+	font-weight: lighter;
+	vertical-align: middle;
+	line-height: 93px;
+}
+
+.tab-header-logo{
+	margin-right: 10px;
+}
+
+.profile-social{
+	font-size: 25px;
+	text-align: right;
+	color: white;
+}
+
+.tab-header-major-glyph{
+	margin-right: 10px;
+}
+
+.tab-header-glyph{
+	margin-right: 5px;
+	margin-left: 10px;
+}
+
+#profile-menu-row{
+	height: 55px;
+}
+
+#profile-tabs{
+	padding: 0px;
+	background-color: white;
+}
+
+#profile-tabs ul{
+	width: 100%;
+	padding-left: 2%;
+	padding-right: 1.2%;
+}
+
+#profile-tabs li{
+	padding: 0px;
+}
+
+#profile-tabs a{
+	color: #293237;
+	height: 55px;
+	padding: 0;
+	padding-top:10px;
+	padding-top:10px;
+	padding-left: 18px;
+	padding-right: 18px;
+	line-height: 35px;
+	font-size: 15px;
+	text-align: center;
+	font-weight: bolder;
+}
+
+#profile-tabs .active a{
+	background-color: white;
+	color: #E27E73;
+}
+
+#profile-tabs .badge{
+	background-color: #293237;
+	color: white;
+}
+
+.content-post{
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+
+.profile-content-block-left{
+	height: 264px;
+	margin-bottom: 20px;
+	padding: 0px;
+	padding-right: 40px;
+}
+
+.profile-content-block-right{
+	height: 264px;
+	margin-bottom: 20px;
+	padding: 0px;
+	padding-left: 40px;
+}
+
+#profil-menu-row{
+	margin: 0px;
+	padding: 0px;
+}
+
+#profile-content{
+	margin: 0px;
+	padding-top: 35px;
+	background-color: #D1D1D1;
+}
+
+#profile-content-col{
+	padding: 0px;
+
+}
+
+#profile-content-col .col-md-5{
+	width: 48.666667%;
+}
+
+.news{
+	display: block;
+	height: 200px;
+	background-color: #ffffff;
+	margin-bottom: 15px;
+	box-shadow: 1px 4px 7px #AFAFAF;
+}

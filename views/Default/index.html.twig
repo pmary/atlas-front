@@ -1,0 +1,72 @@
+{% extends '::atlas-base.html.twig' %}
+
+{% block stylesheets %}
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+	<link href='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.css' rel='stylesheet' />
+{% endblock %}
+
+{% block body %}
+    <!-- Pannel -->
+	<div class="row" id="map-content">
+		
+		<div class="col-xs-12 col-md-12">
+
+			<div class="row" id="map-search-container">
+				  <div class="col-xs-12 col-md-3 nopadding" id="blur-search">
+				  	<div class="row" id="inner-blur-search">
+
+				  		<div class="col-xs-12 col-md-12">
+				  			<ul id = "type-icons" class="nav navbar-nav navbar-left cs-menu map-filters">
+				  				<li id="btn-all"><a href="#" onclick="javascript:filter('all');">TOUT</a></li>
+				  				<li class="half-right-border"></li>
+								<li id="btn-places"><a class="active" href="#" onclick="javascript:filter('Lieux');">LIEUX</a></li>
+								<li id="btn-materials"><a href="#" onclick="javascript:filter('Groupe');"> GROUPE</a></li>
+								<li id="btn-skills"><a href="#" onclick="javascript:filter('Competence');"> COMPETENCES</a></li>
+								<li id="btn-projetcs"><a href="#" onclick="javascript:filter('Projet');">PROJETS</a></li>
+		    				</ul><!-- /type-group -->
+							
+							<div class="col-xs-12 col-md-12 list-group" id="search-results">
+									  
+							</div><!-- /search-results -->
+
+				  		</div>
+
+				  	</div>
+				  </div>
+			</div>
+
+			<!-- Map -->
+			<div class="row" id="map-container">
+			  <div class="col-xs-12 col-md-12" id="map">
+			  </div>
+			</div>
+
+		</div>
+
+		
+
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+    	$("[rel=tooltip]").tooltip({ placement: 'bottom', 'delay': { show: 1000, hide: 500 }});
+	});
+	
+	function filter(type){
+
+		allElements = document.getElementsByClassName('list-group-item');
+		for (index = 0; index < allElements.length; ++index) {
+			classes = allElements[index].className.split(" ");
+			allElements[index].className = classes[0]+" "+classes[1];
+			if (classes[1]==type || type=="all"){
+			 	allElements[index].className += ' active';
+			}
+
+		}
+	};
+	</script>
+{% endblock %}

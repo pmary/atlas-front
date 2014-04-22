@@ -1,0 +1,72 @@
+{% trans_default_domain 'MayallAtlasBundle' %}
+
+<nav class="navbar navbar-default" role="navigation" id="secondary-navbar">
+  <div class="container-fluid">
+    <!-- Toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form id="site-search" class="navbar-form navbar-left" role="search">
+        <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+        <div class="form-group">
+          <input type="text" id="site-search-input" class="form-control" placeholder="Rechercher...">
+        </div>
+      </form>
+      <!-- Toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <ul id="secondary-navbar-globe" class="nav navbar-nav">
+        <li>
+          <a href="./index.php" rel="tooltip" title="Carte"><span class="glyphicon glyphicon-globe"></span></a>
+        </li>
+        <li>
+          <a href="./community-profile.php" title="Reseau Social" rel="tooltip"><span class="glyphicon glyphicon-th-list"></span></a>
+        </li>
+        <li>
+          <a href="#" rel="tooltip" title="Gestion de projet"><span class="glyphicon glyphicon-pencil"></span></a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" id="atlas-add-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modalProject"><span class="glyphicon glyphicon-wrench"></span> {{ 'navbar.secondary.new.project'|trans }}</a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modalGroup"><span class="glyphicon glyphicon-link"></span> {{ 'navbar.secondary.new.group'|trans }}</a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#modalPlace"><span class="glyphicon glyphicon-link"></span> {{ 'navbar.secondary.new.place'|trans }}</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" rel="tooltip" title="Profil"><span class="glyphicon glyphicon-user"></span></a>
+        </li>
+        <li>
+          <a href="#" rel="tooltip" title="Options"><span class="glyphicon glyphicon-cog"></span></a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<nav class="navbar navbar-default" role="navigation" id="triangle-navbar">
+  <div id ="triangle">
+  </div>
+</nav><!-- /triangle-navbar -->

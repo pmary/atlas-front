@@ -1,0 +1,71 @@
+#secondary-navbar .navbar-form{
+	display: table;
+	table-layout: fixed;
+}
+
+#secondary-navbar .navbar-brand{
+	font-size: 27px;
+	font-weight: lighter;
+	color: #FFFFFF;
+	position: absolute;
+	left:50%;
+	margin-left: -53px;
+}
+
+#secondary-navbar #atlas-add-menu li a{
+	color: #333333;
+}
+
+#secondary-navbar .dropdown-menu{
+	text-align: left;
+}
+
+#secondary-navbar .dropdown-menu li{
+	vertical-align: middle;
+}
+
+#secondary-navbar .dropdown-menu li > a{
+	color:#7E7E7E;
+}
+
+#secondary-navbar{
+	min-height: 31px;
+	height: 32px;
+	z-index: 2;
+	background-color: #E27E73;
+	color: #ffffff;
+	border: none;
+	border-radius: 0px;
+	text-align: center;
+}
+
+#secondary-navbar-globe{
+	position: absolute;
+	float: none;
+	left: 50%;
+	margin-left: -57px;
+	font-size: 18px;
+}
+
+#secondary-navbar li>a{
+	color:#F2CFCF;
+}
+
+#secondary-navbar li>a:hover{
+	color: white;
+}
+
+#secondary-navbar .map-filters a{
+	transition: border 0.2s ease;
+}
+
+#secondary-navbar .map-filters a:hover,
+#secondary-navbar .map-filters a.active{
+	border-bottom: 3px solid #FFF;
+}
+
+#secondary-navbar a{
+	color: #ffffff;
+	padding-top: 7px;
+	padding-bottom: 2px;
+}
